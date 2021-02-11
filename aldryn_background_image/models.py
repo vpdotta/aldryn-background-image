@@ -38,7 +38,7 @@ class BackgroundImage(CMSPlugin):
     )
 
     cmsplugin_ptr = models.OneToOneField(
-        CMSPlugin, related_name='+', parent_link=True)
+        CMSPlugin, on_delete=models.PROTECT, related_name='+', parent_link=True)
 
     label = models.CharField(_('label'), max_length=128, blank=True,
                              help_text=_('Optional label for this plugin.'))
