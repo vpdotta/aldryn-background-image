@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='BackgroundImage',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, on_delete=models.PROTECT, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('label', models.CharField(help_text='Optional label for this plugin.', max_length=128, verbose_name='label', blank=True)),
                 ('id_name', models.CharField(max_length=50, verbose_name='id name', blank=True)),
                 ('tag_type', models.CharField(default='div', max_length=50, verbose_name='tag Type', choices=[('div', 'div'), ('header', 'header'), ('footer', 'footer'), ('article', 'article'), ('section', 'section')])),
